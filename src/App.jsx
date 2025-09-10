@@ -38,6 +38,13 @@ const App = () => {
     setActivity((prev) => prev.filter((item) => item.id !== id));
   }
 
+  function handleLogout(navigate) {
+    setUserName('');
+    setActivity([]);
+    sessionStorage.removeItem('userName');
+    navigate('/');
+  }
+
   return (
     <Routes>
       <Route
@@ -54,6 +61,7 @@ const App = () => {
             deleteActivity={deleteActivity}
             darkMode={darkMode}
             setDarkMode={setDarkMode}
+            onLogout={handleLogout} 
           />
         }
       />
