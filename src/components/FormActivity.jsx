@@ -26,7 +26,7 @@ const FormActivity = ({ addNewActivity, setOpenMenu }) => {
         placeholder="Enter Your Activity"
         value={addActivity}
         onChange={(e) => setAddActivity(e.target.value)}
-        className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:placeholder-gray-200"
+        className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:placeholder-gray-200 dark:text-gray-200"
       />
       <button
         type="submit"
