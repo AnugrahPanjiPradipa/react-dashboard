@@ -11,9 +11,6 @@ const App = () => {
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
 
-  const [activity, setActivity] = useState([]);
-  const [userName, setUserName] = useState(() => sessionStorage.getItem('userName') || '');
-
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
@@ -23,6 +20,9 @@ const App = () => {
       localStorage.theme = 'light';
     }
   }, [darkMode]);
+
+  const [activity, setActivity] = useState([]);
+  const [userName, setUserName] = useState(() => sessionStorage.getItem('userName') || '');
 
   useEffect(() => {
     if (userName) {
@@ -61,7 +61,7 @@ const App = () => {
             deleteActivity={deleteActivity}
             darkMode={darkMode}
             setDarkMode={setDarkMode}
-            onLogout={handleLogout} 
+            onLogout={handleLogout}
           />
         }
       />
